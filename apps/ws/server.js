@@ -3,7 +3,7 @@ import { DataSchema } from "@repo/database";
 import Connectdb from '@repo/database/dist/db.js';
 
 const server=new WebSocketServer({
-    port:8080
+    port:3000
 });
 
 server.on('connection',(socket)=>{

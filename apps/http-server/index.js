@@ -82,6 +82,6 @@ app.post('/',async (req,res)=>{
     });
 })
 
-app.listen(3001,()=>{
+app.listen(3000,()=>{
     console.log('http server running on port 3001');
 });
