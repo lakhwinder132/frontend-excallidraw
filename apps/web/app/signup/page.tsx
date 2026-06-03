@@ -20,7 +20,7 @@ export default function signup(){
                 <button onClick={async ()=>{
                   const username = (document.getElementById('username') as HTMLInputElement )?.value ?? '';
                   const password = (document.getElementById('password') as HTMLInputElement)?.value ?? '';
-                  const sending = await axios.post(`${process.env.Backend_URL}/signup`,{
+                  const sending = await axios.post(`${process.env.NEXT_PUBLIC_Backend_URL}/signup`,{
                     username: username,
                     password: password
                   });
@@ -30,3 +30,4 @@ export default function signup(){
         </div>
     </div>)
 }
+

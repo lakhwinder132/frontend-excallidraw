@@ -1,1 +1,0 @@
-export { UserSchema,DataSchema } from "./db.js";

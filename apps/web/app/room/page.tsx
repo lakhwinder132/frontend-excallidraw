@@ -42,7 +42,7 @@ export default function Room(){
                     if(!inputElement){return;}
                     const romid = inputElement?.value;
                     if (!romid) return;
-                    const findone=await axios.post(`${process.env.Backend_URL}/join`,{
+                    const findone=await axios.post(`${process.env.NEXT_PUBLIC_Backend_URL}/join`,{
                         roomid:romid,
                         token:token
                     });
@@ -58,7 +58,7 @@ export default function Room(){
                 <button id="createroom" onClick={ ()=>{
                     async function d(){ 
                     const generateid=Math.random().toString();
-                    const room = await axios.post(`${process.env.Backend_URL}/create`,{
+                    const room = await axios.post(`${process.env.NEXT_PUBLIC_Backend_URL}/create`,{
                         roomid:generateid,
                         token:token
                     });
