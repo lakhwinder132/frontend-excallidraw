@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
+
 type FabricModule = typeof import('fabric');
 
 const STORAGE_KEY = 'whiteboard_data';
@@ -130,6 +131,13 @@ function Divider() {
 // ─── Main component ────────────────────────────────────────────────────────────
 export default function Page() {
   const router = useRouter();
+  useEffect(()=>{
+  const token=localStorage.getItem('roomid');
+  const user=localStorage.getItem('token');
+  if(!token || !user){
+   router.push('/signin'); 
+  }
+},[]);
 
   const [token, setToken] = useState<string | null>(null);
   const [roomid, setRoomid] = useState<string | null>(null);
