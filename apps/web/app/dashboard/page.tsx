@@ -134,8 +134,8 @@ export default function Page() {
   useEffect(()=>{
   const token=localStorage.getItem('roomid');
   const user=localStorage.getItem('token');
-  if(!token || !user){
-   router.push('/signin'); 
+  if(!(token && user)){
+   router.push('/signin');
   }
 },[]);
 
